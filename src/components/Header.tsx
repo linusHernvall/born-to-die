@@ -5,9 +5,16 @@ import React from "react";
 function Header() {
   return (
     <Box sx={headerSx}>
-      <Box sx={{ width: "35px", height: "35px", border: "1px solid red" }} />
+      <Box
+        sx={{
+          width: "35px",
+          height: "35px",
+          marginLeft: "4rem",
+          border: "1px solid red",
+        }}
+      />
       <Box>LOGOTYPE</Box>
-      <MenuIcon fontSize="large" />
+      <MenuIcon sx={{ marginRight: "4rem" }} fontSize="large" />
     </Box>
   );
 }
