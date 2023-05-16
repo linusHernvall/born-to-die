@@ -1,6 +1,5 @@
 import MenuIcon from "@mui/icons-material/Menu";
 import { Box, SxProps, Theme } from "@mui/material";
-import React from "react";
 
 function Header() {
   return (
@@ -10,7 +9,7 @@ function Header() {
           width: "35px",
           height: "35px",
           marginLeft: "4rem",
-          border: "1px solid red",
+          border: "1px solid blue",
         }}
       />
       <Box>LOGOTYPE</Box>
