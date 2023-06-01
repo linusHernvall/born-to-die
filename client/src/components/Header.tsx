@@ -1,5 +1,6 @@
-import MenuIcon from "@mui/icons-material/Menu";
 import { Box, SxProps, Theme } from "@mui/material";
+import { CSSProperties } from "react";
+import Drawer from "./Drawer";
 
 function Header() {
   return (
@@ -9,11 +10,21 @@ function Header() {
           width: "35px",
           height: "35px",
           marginLeft: "4rem",
-          border: "1px solid blue",
+          // border: "1px solid blue",
         }}
       />
-      <Box>LOGOTYPE</Box>
-      <MenuIcon sx={{ marginRight: "4rem" }} fontSize="large" />
+      <Box>
+        <img
+          src="../../public/images/btd-logo-white-trans.png"
+          alt="Born To Die logotype"
+          style={logoSx}
+        />
+      </Box>
+      {/* <MenuIcon
+        sx={{ marginRight: "4rem", color: "#FFFFFF", cursor: "pointer" }}
+        fontSize="large"
+      /> */}
+      <Drawer />
     </Box>
   );
 }
@@ -29,5 +40,9 @@ const headerSx: SxProps<Theme> = (theme) => ({
   width: "100%",
   height: "15rem",
 });
+
+const logoSx: CSSProperties = {
+  width: "10rem",
+};
 
 export default Header;
