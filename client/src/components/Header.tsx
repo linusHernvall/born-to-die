@@ -15,7 +15,7 @@ function Header() {
       />
       <Box>
         <img
-          src="../../public/images/btd-logo-white-trans.png"
+          src="../../images/btd-logo-white-trans.png"
           alt="Born To Die logotype"
           style={logoSx}
         />
