@@ -1,7 +1,11 @@
-import React from "react";
+import Videosection from "../components/Videosection";
 
 function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <Videosection />
+    </div>
+  );
 }
 
 export default Home;

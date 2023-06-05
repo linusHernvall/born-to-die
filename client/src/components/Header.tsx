@@ -14,7 +14,7 @@ function Header() {
           // border: "1px solid blue",
         }}
       />
-      <Link to={"/home"}>
+      <Link to={"/"}>
         <img
           src="../../images/btd-logo-white-trans.png"
           alt="Born To Die logotype"
@@ -38,7 +38,7 @@ const headerSx: SxProps<Theme> = (theme) => ({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  border: "2px solid red",
+  // border: "2px solid red",
   width: "100%",
   height: "15rem",
 });
