@@ -62,7 +62,7 @@ const theme = createTheme({
       fontWeight: 600,
     },
     body1: {
-      fontFamily: "Helvetica",
+      fontFamily: "Castoro Titling",
     },
     body2: {
       fontFamily: "Helvetica",

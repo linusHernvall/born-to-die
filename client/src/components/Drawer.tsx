@@ -1,6 +1,4 @@
-import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
@@ -8,10 +6,9 @@ import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-
 import * as React from "react";
+import { Link } from "react-router-dom";
 
 type Anchor = "top" | "left" | "bottom" | "right";
 
@@ -45,12 +42,12 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Music", "Band", "Contact", "Drafts"].map((text, index) => (
+        {["Music", "Band", "Shows", "News", "Photos"].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
+            <ListItemButton component={Link} to={`/${text.toLowerCase()}`}>
+              {/* <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
+              </ListItemIcon> */}
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
@@ -58,12 +55,12 @@ export default function TemporaryDrawer() {
       </List>
       <Divider />
       <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
+        {["Contact"].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
+            <ListItemButton component={Link} to={`/${text.toLowerCase()}`}>
+              {/* <ListItemIcon>
+                {index % 2 === 0 ? <MailIcon /> : <InboxIcon />}
+              </ListItemIcon> */}
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>

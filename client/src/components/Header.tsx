@@ -1,5 +1,6 @@
 import { Box, SxProps, Theme } from "@mui/material";
 import { CSSProperties } from "react";
+import { Link } from "react-router-dom";
 import Drawer from "./Drawer";
 
 function Header() {
@@ -13,13 +14,14 @@ function Header() {
           // border: "1px solid blue",
         }}
       />
-      <Box>
+      <Link to={"/home"}>
         <img
           src="../../images/btd-logo-white-trans.png"
           alt="Born To Die logotype"
           style={logoSx}
         />
-      </Box>
+      </Link>
+
       {/* <MenuIcon
         sx={{ marginRight: "4rem", color: "#FFFFFF", cursor: "pointer" }}
         fontSize="large"
