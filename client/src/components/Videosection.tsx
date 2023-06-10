@@ -2,7 +2,7 @@ function Videosection() {
   return (
     <div
       style={{
-        position: "fixed",
+        position: "absolute",
         top: 0,
         left: 0,
         width: "100%",
@@ -10,7 +10,11 @@ function Videosection() {
         zIndex: -1,
       }}
     >
-      <img src="../../images/background.jpg" alt="Band playing live" />
+      <img
+        src="../../images/background.jpg"
+        alt="Band playing live"
+        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+      />
     </div>
   );
 

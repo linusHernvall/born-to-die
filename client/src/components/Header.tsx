@@ -10,8 +10,8 @@ function Header() {
         sx={{
           width: "35px",
           height: "35px",
-          marginLeft: "4rem",
-          // border: "1px solid blue",
+          marginLeft: "2rem",
+          border: "1px solid blue",
         }}
       />
       <Link to={"/"}>
@@ -38,7 +38,7 @@ const headerSx: SxProps<Theme> = (theme) => ({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  // border: "2px solid red",
+  border: "2px solid red",
   width: "100%",
   height: "15rem",
 });

@@ -73,7 +73,7 @@ export default function TemporaryDrawer() {
     <div>
       <Button onClick={toggleDrawer("right", true)}>
         <MenuIcon
-          sx={{ color: "#FFFFFF", marginRight: "4rem" }}
+          sx={{ color: "#FFFFFF", marginRight: "2rem", padding: 0 }}
           fontSize="large"
         />
       </Button>
