@@ -11,7 +11,7 @@ function Header() {
           width: "35px",
           height: "35px",
           marginLeft: "2rem",
-          border: "1px solid blue",
+          // border: "1px solid blue",
         }}
       />
       <Link to={"/"}>
@@ -41,6 +41,9 @@ const headerSx: SxProps<Theme> = (theme) => ({
   border: "2px solid red",
   width: "100%",
   height: "15rem",
+  position: "absolute",
+  top: 0,
+  left: 0,
 });
 
 const logoSx: CSSProperties = {
