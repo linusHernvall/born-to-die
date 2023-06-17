@@ -69,6 +69,7 @@ const theme = createTheme({
     },
     body1: {
       fontFamily: "Castoro Titling",
+      color: "#FFFFFF",
     },
     body2: {
       fontFamily: "Helvetica",

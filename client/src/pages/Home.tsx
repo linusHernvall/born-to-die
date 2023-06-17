@@ -5,7 +5,7 @@ function Home() {
   return (
     <div>
       <Videosection />
-      <Typography sx={{ marginTop: "0", color: "white" }}>HOME</Typography>
+      <Typography sx={{ marginTop: "0" }}>HOME</Typography>
     </div>
   );
 }

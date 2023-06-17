@@ -2,9 +2,9 @@ import { Typography } from "@mui/material";
 
 function Band() {
   return (
-    <Typography variant="body2" style={{ color: "white" }}>
-      Band
-    </Typography>
+    <div className="marginTop">
+      <Typography>Band</Typography>;
+    </div>
   );
 }
 
