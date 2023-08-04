@@ -1,11 +1,15 @@
-import { Typography } from "@mui/material";
+import { Container } from "@mui/material";
+import GigSchedule from "../components/GigSchedule";
 import Videosection from "../components/Videosection";
 
 function Home() {
   return (
     <div>
       <Videosection />
-      <Typography sx={{ marginTop: "0" }}>HOME</Typography>
+
+      <Container>
+        <GigSchedule />
+      </Container>
     </div>
   );
 }
