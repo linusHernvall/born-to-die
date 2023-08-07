@@ -40,32 +40,42 @@ const theme = createTheme({
     h1: {
       fontFamily: "Castoro Titling",
       fontWeight: 900,
+      color: "#FFFFFF",
     },
     h2: {
       fontFamily: "Castoro Titling",
       fontWeight: 700,
+      color: "#FFFFFF",
     },
     h3: {
       fontFamily: "Castoro Titling",
       fontWeight: 600,
+      color: "#FFFFFF",
     },
     h4: {
       fontFamily: "Castoro Titling",
       fontWeight: 600,
+      color: "#FFFFFF",
     },
     h5: {
       fontFamily: "Castoro Titling",
       fontWeight: 600,
+      color: "#FFFFFF",
     },
     h6: {
       fontFamily: "Castoro Titling",
       fontWeight: 600,
+      color: "#FFFFFF",
     },
     body1: {
       fontFamily: "Castoro Titling",
+      color: "#FFFFFF",
+      fontSize: "15px",
     },
     body2: {
       fontFamily: "Helvetica",
+      fontSize: "12px",
+      color: "#FFFFFF",
     },
     caption: {
       fontFamily: "Helvetica",
