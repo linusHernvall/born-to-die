@@ -3,7 +3,6 @@ import Button from "@mui/material/Button";
 
 function TicketButton() {
   // CSS--------------------------------------------
-
   const buttonSx: SxProps = {
     background: "#000000",
     borderRadius: "5px",
