@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { useEffect, useRef } from "react";
 
-function Videosection() {
+function VideoSection() {
   // <div
   //   style={{
   //     top: 0,
@@ -24,7 +24,7 @@ function Videosection() {
   useEffect(() => {
     if (videoRef.current) {
       // Auto-play the video
-      videoRef.current.play().catch((error: any) => {
+      videoRef.current.play().catch((error) => {
         console.log("Autoplay was prevented:", error);
       });
     }
@@ -58,4 +58,4 @@ function Videosection() {
   );
 }
 
-export default Videosection;
+export default VideoSection;
