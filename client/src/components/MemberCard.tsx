@@ -15,11 +15,16 @@ export default function MemberCard(props: {
     objectFit: "contain",
   };
 
+  const cardSx: SxProps = {
+    maxWidth: 500,
+    backgroundColor: "#000000",
+    marginBottom: "1rem",
+    border: "1px solid #FFFFFF",
+  };
+
   const { image, name, description, instrument } = props;
   return (
-    <Card
-      sx={{ maxWidth: 500, backgroundColor: "green", marginBottom: "1rem" }}
-    >
+    <Card sx={cardSx}>
       <CardActionArea>
         <CardMedia
           sx={imgSx}
