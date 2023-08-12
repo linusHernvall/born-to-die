@@ -1,11 +1,11 @@
 import { Container } from "@mui/material";
 import GigSchedule from "../components/GigSchedule";
-import Videosection from "../components/Videosection";
+import VideoSection from "../components/Videosection";
 
 function Home() {
   return (
     <div>
-      <Videosection />
+      <VideoSection />
 
       <Container>
         <GigSchedule />
