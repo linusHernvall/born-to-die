@@ -11,15 +11,20 @@ export default function MemberCard(props: {
   instrument: string;
 }) {
   // CSS--------------------------------------------
-  const imgSx: SxProps = {
-    objectFit: "contain",
-  };
-
   const cardSx: SxProps = {
     maxWidth: 500,
     backgroundColor: "#000000",
     marginBottom: "1rem",
     border: "1px solid #FFFFFF",
+    transition: "transform 0.5s ease",
+    "&:hover": {
+      transform: "scale(1.05)",
+      border: "1px solid #C40000",
+    },
+  };
+
+  const imgSx: SxProps = {
+    objectFit: "contain",
   };
 
   const { image, name, description, instrument } = props;

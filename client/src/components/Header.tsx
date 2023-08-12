@@ -16,7 +16,7 @@ function Header() {
     top: 0,
     left: 0,
     zIndex: "10",
-    border: "2px solid red",
+    // border: "2px solid red",
   };
 
   const logoSx: CSSProperties = {
