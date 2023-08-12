@@ -1,6 +1,12 @@
+import robinBandImg from "../public/images/btd-logo-cream.jpg";
+import gcBandImg from "../public/images/btd-logo-red.jpg";
+import linusBandImg from "../public/images/btd-logo-white.jpg";
+import ericBandImg from "../public/images/btd-logo-yellow.jpg";
+
 export const bandMembers = [
   {
     id: 1,
+    imgUrl: robinBandImg,
     fullName: "Robin Lagerborg",
     instrument: "guitar",
     description:
@@ -8,6 +14,7 @@ export const bandMembers = [
   },
   {
     id: 2,
+    imgUrl: gcBandImg,
     fullName: "GC",
     instrument: "vocals",
     description:
@@ -15,6 +22,7 @@ export const bandMembers = [
   },
   {
     id: 3,
+    imgUrl: ericBandImg,
     fullName: "Eric Skjuttorp",
     instrument: "drums",
     description:
@@ -22,6 +30,7 @@ export const bandMembers = [
   },
   {
     id: 4,
+    imgUrl: linusBandImg,
     fullName: "Linus Hernvall",
     instrument: "bass",
     description:

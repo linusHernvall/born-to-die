@@ -1,6 +1,6 @@
 import { Container } from "@mui/material";
 import GigSchedule from "../components/GigSchedule";
-import VideoSection from "../components/VideoSection";
+import VideoSection from "../components/Videosection";
 
 function Home() {
   return (

@@ -1,15 +1,16 @@
-import { Box, SxProps, Typography } from "@mui/material";
+import { Box, SxProps } from "@mui/material";
 import BandMember from "../components/BandMember";
 
 function Band() {
   // CSS--------------------------------------------
   const bandZone: SxProps = {
     border: "2px solid red",
+    display: "flex",
+    justifyContent: "center",
   };
 
   return (
     <Box sx={bandZone} className="marginTop">
-      <Typography>Band</Typography>
       <BandMember />
     </Box>
   );

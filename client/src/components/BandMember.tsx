@@ -1,18 +1,23 @@
-import { Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { bandMembers } from "../bandData";
+import MemberCard from "./MemberCard";
 
 function BandMember() {
   return (
-    <div>
+    <Box>
       <ul>
         {bandMembers.map((member) => (
           <li key={member.id}>
-            <Typography>{member.fullName}</Typography>
-            <Typography>{member.description}</Typography>
+            <MemberCard
+              image={member.imgUrl}
+              name={member.fullName}
+              description={member.description}
+              instrument={member.instrument}
+            />
           </li>
         ))}
       </ul>
-    </div>
+    </Box>
   );
 }
 
