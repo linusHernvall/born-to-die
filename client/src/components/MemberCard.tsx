@@ -12,14 +12,15 @@ export default function MemberCard(props: {
 }) {
   // CSS--------------------------------------------
   const cardSx: SxProps = {
-    maxWidth: 500,
+    maxWidth: "500px",
     backgroundColor: "#000000",
-    marginBottom: "1rem",
+    marginBottom: "1.5rem",
     border: "1px solid #FFFFFF",
-    transition: "transform 0.5s ease",
+    transition: "transform 0.5s ease, box-shadow 0.2s ease",
     "&:hover": {
       transform: "scale(1.05)",
       border: "1px solid #C40000",
+      boxShadow: "0 2px 10px #C40000",
     },
   };
 

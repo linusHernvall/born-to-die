@@ -1,6 +1,5 @@
 import { Box, SxProps, Typography } from "@mui/material";
 import BandMember from "../components/BandMember";
-import PlayCard from "../components/PlayCard";
 
 function Band() {
   // CSS--------------------------------------------
@@ -22,7 +21,6 @@ function Band() {
       </Typography>
       <Box sx={memberWrappersx}>
         <BandMember />
-        <PlayCard />
       </Box>
     </Box>
   );
