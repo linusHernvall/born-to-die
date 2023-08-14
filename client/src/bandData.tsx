@@ -1,7 +1,7 @@
-import robinBandImg from "../public/images/btd-logo-cream.jpg";
-import gcBandImg from "../public/images/btd-logo-red.jpg";
-import linusBandImg from "../public/images/btd-logo-white.jpg";
-import ericBandImg from "../public/images/btd-logo-yellow.jpg";
+import robinBandImg from "/images/btd-logo-cream.jpg";
+import gcBandImg from "/images/btd-logo-red.jpg";
+import linusBandImg from "/images/btd-logo-white.jpg";
+import ericBandImg from "/images/btd-logo-yellow.jpg";
 
 export const bandMembers = [
   {

@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { bandMembers } from "../bandData";
-import MemberCard from "./MemberCard";
+import BandMemberCard from "./BandMeberCard";
 
 function BandMember() {
   return (
@@ -8,7 +8,13 @@ function BandMember() {
       <ul>
         {bandMembers.map((member) => (
           <li key={member.id}>
-            <MemberCard
+            {/* <MemberCard
+              image={member.imgUrl}
+              name={member.fullName}
+              description={member.description}
+              instrument={member.instrument}
+            /> */}
+            <BandMemberCard
               image={member.imgUrl}
               name={member.fullName}
               description={member.description}

@@ -13,6 +13,7 @@ import Band from "./pages/Band";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Music from "./pages/Music";
+import Shows from "./pages/Shows";
 
 declare module "@mui/material/styles" {
   interface ThemeOptions {
@@ -90,6 +91,7 @@ const router = createBrowserRouter(
       <Route path="music" element={<Music />} />
       <Route path="contact" element={<Contact />} />
       <Route path="band" element={<Band />} />
+      <Route path="shows" element={<Shows />} />
       <Route path="*" element={<h2>404 not found</h2>} />
     </Route>
   )
