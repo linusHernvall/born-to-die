@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 
 function VideoSection() {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.up("sm"));
+  const isWideScreen = useMediaQuery(theme.breakpoints.up("sm"));
 
   // <div
   //   style={{
@@ -44,7 +44,7 @@ function VideoSection() {
         overflow: "hidden",
       }}
     >
-      {isSmallScreen ? (
+      {isWideScreen ? (
         <video
           ref={videoRef}
           autoPlay
@@ -62,7 +62,7 @@ function VideoSection() {
         <img
           src="../../images/background.jpg"
           alt="Band playing live"
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          style={{ width: "100%", height: "100vh", objectFit: "cover" }}
         />
       )}
     </Box>

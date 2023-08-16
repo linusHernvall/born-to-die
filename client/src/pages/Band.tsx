@@ -1,26 +1,31 @@
-import { Box, SxProps, Typography } from "@mui/material";
+import { Box, SxProps } from "@mui/material";
 import BandMember from "../components/BandMember";
+import Biography from "../components/Biography";
 
 function Band() {
   // CSS--------------------------------------------
   const bandZoneSx: SxProps = {
     display: "flex",
-    flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center",
   };
-  const memberWrappersx: SxProps = {
+  const bioBandWrapperSx: SxProps = {
     display: "flex",
     justifyContent: "center",
+    flexDirection: "column",
+    alignItems: "center",
+  };
+  const memberWrapperSx: SxProps = {
+    marginTop: "3rem",
+    // width: "100%",
   };
 
   return (
-    <Box sx={bandZoneSx} className="marginTop">
-      <Typography sx={{ margin: "1rem 0" }} variant="h2">
-        The Band
-      </Typography>
-      <Box sx={memberWrappersx}>
-        <BandMember />
+    <Box sx={bandZoneSx}>
+      <Box sx={bioBandWrapperSx}>
+        <Biography />
+        <Box sx={memberWrapperSx}>
+          <BandMember />
+        </Box>
       </Box>
     </Box>
   );

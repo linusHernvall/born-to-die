@@ -13,6 +13,8 @@ interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
 }
 
+// ANVÄNDS EJ JUST NU!!!
+
 const ExpandMore = styled((props: ExpandMoreProps) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;

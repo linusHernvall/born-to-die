@@ -12,9 +12,9 @@ export default function MemberCard(props: {
 }) {
   // CSS--------------------------------------------
   const cardSx: SxProps = {
-    maxWidth: "500px",
+    maxWidth: "400px",
     backgroundColor: "#000000",
-    marginBottom: "1.5rem",
+    marginBottom: "2rem",
     border: "1px solid #FFFFFF",
     transition: "transform 0.5s ease, box-shadow 0.2s ease",
     "&:hover": {
@@ -35,7 +35,7 @@ export default function MemberCard(props: {
         <CardMedia
           sx={imgSx}
           component="img"
-          height="200"
+          height="400px"
           image={image}
           alt={name}
         />
@@ -44,7 +44,7 @@ export default function MemberCard(props: {
             {name}
           </Typography>
           <Typography variant="body1">{instrument}</Typography>
-          <Typography variant="body2">{description}</Typography>
+          {/* <Typography variant="body2">{description}</Typography> */}
         </CardContent>
       </CardActionArea>
     </Card>
