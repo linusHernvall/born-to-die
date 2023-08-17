@@ -7,20 +7,20 @@ import TableContainer from "@mui/material/TableContainer";
 import TableRow from "@mui/material/TableRow";
 import TicketButton from "./TicketButton";
 
-function createData(date: string, venue: string, location: string) {
-  return { date, venue, location };
+function createData(date: string, venue: string) {
+  return { date, venue };
 }
 
 const rows = [
-  createData("Thu 18 May", "The Abyss", "Gothenburg, Sweden"),
-  createData("Sat 27 May", "Pow Wow Festival", "Stockholm, Sweden"),
-  createData("Fri 18 Aug", "Fredagsmangel", "Stockholm, Sweden"),
+  createData("Thu 18 May", "The Abyss - Gothenburg, Sweden"),
+  createData("Sat 27 May", "Pow Wow Festival - Stockholm, Sweden"),
+  createData("Fri 18 Aug", "Fredagsmangel - Stockholm, Sweden"),
 ];
 
 export default function BasicTable() {
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table sx={{ minWidth: "350px" }} aria-label="simple table">
         <TableBody>
           {rows.map((row, index) => (
             <TableRow
@@ -34,10 +34,7 @@ export default function BasicTable() {
                 <Typography>{row.date}</Typography>
               </TableCell>
               <TableCell align="left">
-                <Typography>{row.venue}</Typography>
-              </TableCell>
-              <TableCell align="left">
-                <Typography>{row.location}</Typography>
+                <Typography variant="body2">{row.venue}</Typography>
               </TableCell>
               <TableCell align="right">
                 <TicketButton />

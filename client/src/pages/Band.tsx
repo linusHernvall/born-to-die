@@ -1,5 +1,6 @@
 import { Box, SxProps } from "@mui/material";
 import BandMember from "../components/BandMember";
+import BandPicture from "../components/BandPicture";
 import Biography from "../components/Biography";
 
 function Band() {
@@ -16,12 +17,12 @@ function Band() {
   };
   const memberWrapperSx: SxProps = {
     marginTop: "3rem",
-    // width: "100%",
   };
 
   return (
     <Box sx={bandZoneSx}>
       <Box sx={bioBandWrapperSx}>
+        <BandPicture />
         <Biography />
         <Box sx={memberWrapperSx}>
           <BandMember />
