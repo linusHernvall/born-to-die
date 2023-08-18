@@ -13,8 +13,8 @@ function Header() {
     justifyContent: "center",
     alignItems: "center",
     position: "relative",
-    top: "50%", // Vertically centered
-    left: "50%", // Horizontally centered
+    top: "50%",
+    left: "50%",
     transform: "translate(-50%, -50%)",
   };
 
@@ -50,10 +50,6 @@ function Header() {
           />
         </Link>
 
-        {/* <MenuIcon
-        sx={{ marginRight: "4rem", color: "#FFFFFF", cursor: "pointer" }}
-        fontSize="large"
-      /> */}
         <Drawer />
       </Box>
     </Box>
