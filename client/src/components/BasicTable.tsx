@@ -33,7 +33,7 @@ export default function BasicTable() {
               <TableCell component="th" scope="row">
                 <Typography>{row.date}</Typography>
               </TableCell>
-              <TableCell align="left">
+              <TableCell align="center">
                 <Typography variant="body2">{row.venue}</Typography>
               </TableCell>
               <TableCell align="right">
