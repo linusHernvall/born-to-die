@@ -36,7 +36,14 @@ declare module "@mui/material/styles" {
 }
 
 const theme = createTheme({
-  palette: {},
+  palette: {
+    primary: {
+      main: "#000000",
+    },
+    secondary: {
+      main: "#C40000",
+    },
+  },
   typography: {
     h1: {
       fontFamily: "Castoro Titling",
