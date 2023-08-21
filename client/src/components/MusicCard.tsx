@@ -1,7 +1,7 @@
+import Forward10Icon from "@mui/icons-material/Forward10";
 import PauseIcon from "@mui/icons-material/Pause";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import SkipNextIcon from "@mui/icons-material/SkipNext";
-import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
+import Replay10Icon from "@mui/icons-material/Replay10";
 import { LinearProgress } from "@mui/material";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
@@ -74,16 +74,31 @@ export default function MusicCard() {
     handleProgressClick(event);
   }
 
+  function formatTime(time: number) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  }
+
+  function handleAudioEnd() {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      setIsPlaying(false);
+    }
+  }
+
   useEffect(() => {
     const audio = audioRef.current;
 
     if (audio) {
       audio.addEventListener("timeupdate", handleTimeUpdate);
       audio.addEventListener("loadedmetadata", handleMetadataLoaded);
+      audio.addEventListener("ended", handleAudioEnd);
 
       return () => {
         audio.removeEventListener("timeupdate", handleTimeUpdate);
         audio.removeEventListener("loadedmetadata", handleMetadataLoaded);
+        audio.addEventListener("ended", handleAudioEnd);
       };
     }
   }, []);
@@ -109,20 +124,40 @@ export default function MusicCard() {
         </CardContent>
         <Box
           sx={{
-            backgroundColor: "secondary.main",
+            backgroundColor: "primary.main",
             pl: 1.5,
             pr: 1.5,
           }}
         >
-          <LinearProgress
-            variant="determinate"
-            value={(currentTime / duration) * 100}
-            sx={{ width: "100%", backgroundColor: "green" }}
-            onClick={handleProgressClick}
-            onMouseMove={(e) => {
-              if (e.buttons === 1) handleProgressDrag(e);
-            }}
-          />
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Typography
+              variant="body2"
+              sx={{ width: "30px", textAlign: "right" }}
+            >
+              {formatTime(currentTime)}
+            </Typography>
+
+            <LinearProgress
+              variant="determinate"
+              value={(currentTime / duration) * 100}
+              sx={{
+                flexGrow: 1,
+                marginX: 1,
+                backgroundColor: "#FFFFFF",
+                "& .MuiLinearProgress-bar": {
+                  backgroundColor: "secondary.main",
+                },
+              }}
+              onClick={handleProgressClick}
+              onMouseMove={(e) => {
+                if (e.buttons === 1) handleProgressDrag(e);
+              }}
+            />
+
+            <Typography variant="body2" sx={{ width: "30px" }}>
+              -{formatTime(duration - currentTime)}
+            </Typography>
+          </Box>
 
           <Box
             sx={{
@@ -137,18 +172,22 @@ export default function MusicCard() {
               sx={{ color: "#FFFFFF" }}
             >
               {theme.direction === "rtl" ? (
-                <SkipNextIcon />
+                <Forward10Icon
+                  sx={{ height: 35, width: 35, color: "#FFFFFF" }}
+                />
               ) : (
-                <SkipPreviousIcon />
+                <Replay10Icon
+                  sx={{ height: 35, width: 35, color: "#FFFFFF" }}
+                />
               )}
             </IconButton>
 
             <IconButton aria-label="play/pause" onClick={handlePlayMusic}>
               {isPlaying ? (
-                <PauseIcon sx={{ height: 38, width: 38, color: "#FFFFFF" }} />
+                <PauseIcon sx={{ height: 50, width: 50, color: "#FFFFFF" }} />
               ) : (
                 <PlayArrowIcon
-                  sx={{ height: 38, width: 38, color: "#FFFFFF" }}
+                  sx={{ height: 50, width: 50, color: "#FFFFFF" }}
                 />
               )}
             </IconButton>
@@ -159,9 +198,13 @@ export default function MusicCard() {
               sx={{ color: "#FFFFFF" }}
             >
               {theme.direction === "rtl" ? (
-                <SkipPreviousIcon />
+                <Replay10Icon
+                  sx={{ height: 35, width: 35, color: "#FFFFFF" }}
+                />
               ) : (
-                <SkipNextIcon />
+                <Forward10Icon
+                  sx={{ height: 35, width: 35, color: "#FFFFFF" }}
+                />
               )}
             </IconButton>
           </Box>
