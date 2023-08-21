@@ -56,6 +56,24 @@ export default function MusicCard() {
     }
   }
 
+  function handleProgressClick(event: React.MouseEvent<HTMLElement>) {
+    const width = event.currentTarget.clientWidth;
+    const clickX =
+      event.clientX - event.currentTarget.getBoundingClientRect().left;
+    const newTime = (clickX / width) * duration;
+    if (audioRef.current) {
+      audioRef.current.currentTime = newTime;
+    }
+  }
+
+  function handleProgressDrag(event: React.MouseEvent<HTMLElement>) {
+    if (isPlaying && audioRef.current) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    }
+    handleProgressClick(event);
+  }
+
   useEffect(() => {
     const audio = audioRef.current;
 
@@ -100,6 +118,10 @@ export default function MusicCard() {
             variant="determinate"
             value={(currentTime / duration) * 100}
             sx={{ width: "100%", backgroundColor: "green" }}
+            onClick={handleProgressClick}
+            onMouseMove={(e) => {
+              if (e.buttons === 1) handleProgressDrag(e);
+            }}
           />
 
           <Box
