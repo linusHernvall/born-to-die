@@ -2,6 +2,7 @@ import PauseIcon from "@mui/icons-material/Pause";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
+import { LinearProgress } from "@mui/material";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -9,12 +10,14 @@ import CardMedia from "@mui/material/CardMedia";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/material/styles";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function MusicCard() {
   const theme = useTheme();
 
   const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -34,11 +37,38 @@ export default function MusicCard() {
       audioRef.current.currentTime -= 10;
     }
   }
+
   function handleSkipForward() {
     if (audioRef.current) {
       audioRef.current.currentTime += 10;
     }
   }
+
+  function handleTimeUpdate() {
+    if (audioRef.current) {
+      setCurrentTime(audioRef.current.currentTime);
+    }
+  }
+
+  function handleMetadataLoaded() {
+    if (audioRef.current) {
+      setDuration(audioRef.current.duration);
+    }
+  }
+
+  useEffect(() => {
+    const audio = audioRef.current;
+
+    if (audio) {
+      audio.addEventListener("timeupdate", handleTimeUpdate);
+      audio.addEventListener("loadedmetadata", handleMetadataLoaded);
+
+      return () => {
+        audio.removeEventListener("timeupdate", handleTimeUpdate);
+        audio.removeEventListener("loadedmetadata", handleMetadataLoaded);
+      };
+    }
+  }, []);
 
   return (
     <Card
@@ -61,45 +91,58 @@ export default function MusicCard() {
         </CardContent>
         <Box
           sx={{
-            backgroundColor: "primary.main",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            pl: 1,
-            pb: 1,
+            backgroundColor: "secondary.main",
+            pl: 1.5,
+            pr: 1.5,
           }}
         >
-          <IconButton
-            aria-label="previous"
-            onClick={handleSkipBackward}
-            sx={{ color: "#FFFFFF" }}
-          >
-            {theme.direction === "rtl" ? (
-              <SkipNextIcon />
-            ) : (
-              <SkipPreviousIcon />
-            )}
-          </IconButton>
+          <LinearProgress
+            variant="determinate"
+            value={(currentTime / duration) * 100}
+            sx={{ width: "100%", backgroundColor: "green" }}
+          />
 
-          <IconButton aria-label="play/pause" onClick={handlePlayMusic}>
-            {isPlaying ? (
-              <PauseIcon sx={{ height: 38, width: 38, color: "#FFFFFF" }} />
-            ) : (
-              <PlayArrowIcon sx={{ height: 38, width: 38, color: "#FFFFFF" }} />
-            )}
-          </IconButton>
-
-          <IconButton
-            aria-label="next"
-            onClick={handleSkipForward}
-            sx={{ color: "#FFFFFF" }}
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
-            {theme.direction === "rtl" ? (
-              <SkipPreviousIcon />
-            ) : (
-              <SkipNextIcon />
-            )}
-          </IconButton>
+            <IconButton
+              aria-label="previous"
+              onClick={handleSkipBackward}
+              sx={{ color: "#FFFFFF" }}
+            >
+              {theme.direction === "rtl" ? (
+                <SkipNextIcon />
+              ) : (
+                <SkipPreviousIcon />
+              )}
+            </IconButton>
+
+            <IconButton aria-label="play/pause" onClick={handlePlayMusic}>
+              {isPlaying ? (
+                <PauseIcon sx={{ height: 38, width: 38, color: "#FFFFFF" }} />
+              ) : (
+                <PlayArrowIcon
+                  sx={{ height: 38, width: 38, color: "#FFFFFF" }}
+                />
+              )}
+            </IconButton>
+
+            <IconButton
+              aria-label="next"
+              onClick={handleSkipForward}
+              sx={{ color: "#FFFFFF" }}
+            >
+              {theme.direction === "rtl" ? (
+                <SkipPreviousIcon />
+              ) : (
+                <SkipNextIcon />
+              )}
+            </IconButton>
+          </Box>
         </Box>
       </Box>
       <audio ref={audioRef} src="../../audio/the-strong-ones.mp3" />
