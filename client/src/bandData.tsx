@@ -3,7 +3,9 @@ import gcBandImg from "/images/btd-logo-red.jpg";
 import linusBandImg from "/images/btd-logo-white.jpg";
 import ericBandImg from "/images/btd-logo-yellow.jpg";
 
+import spinelessAudio from "/audio/spineless.mp3";
 import tSOAudio from "/audio/the-strong-ones.mp3";
+import spinelessImg from "/images/ep2022.jpg";
 import tSOImg from "/images/the-strong-ones.png";
 
 export const bandMembers = [
@@ -48,5 +50,12 @@ export const audioTracks = [
     title: "The Strong Ones",
     band: "Born To Die",
     song: tSOAudio,
+  },
+  {
+    id: 2,
+    imgUrl: spinelessImg,
+    title: "Spineless",
+    band: "Born To Die",
+    song: spinelessAudio,
   },
 ];

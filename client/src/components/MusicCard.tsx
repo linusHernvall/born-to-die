@@ -122,7 +122,12 @@ export default function MusicCard({ track }: MusicCardProps) {
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <CardMedia
           component="img"
-          sx={{ height: "300px" }}
+          sx={{
+            height: "300px",
+            width: "270px",
+            objectFit: "contain",
+            backgroundColor: "primary.main",
+          }}
           image={track.imgUrl}
           alt="Single cover"
         />
