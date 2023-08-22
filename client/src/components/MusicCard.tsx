@@ -12,7 +12,19 @@ import Typography from "@mui/material/Typography";
 import { useTheme } from "@mui/material/styles";
 import { useEffect, useRef, useState } from "react";
 
-export default function MusicCard() {
+type Track = {
+  id: number;
+  imgUrl: string;
+  title: string;
+  band: string;
+  song: string;
+};
+
+interface MusicCardProps {
+  track: Track;
+}
+
+export default function MusicCard({ track }: MusicCardProps) {
   const theme = useTheme();
 
   const [isPlaying, setIsPlaying] = useState(false);
@@ -111,15 +123,15 @@ export default function MusicCard() {
         <CardMedia
           component="img"
           sx={{ height: "300px" }}
-          image="../../images/the-strong-ones.png"
+          image={track.imgUrl}
           alt="Single cover"
         />
         <CardContent sx={{ flex: "1 0 auto", backgroundColor: "primary.main" }}>
           <Typography component="div" variant="h5">
-            The Strong Ones
+            {track.title}
           </Typography>
           <Typography variant="body1" component="div">
-            Born To Die
+            {track.band}
           </Typography>
         </CardContent>
         <Box
@@ -210,7 +222,7 @@ export default function MusicCard() {
           </Box>
         </Box>
       </Box>
-      <audio ref={audioRef} src="../../audio/the-strong-ones.mp3" />
+      <audio ref={audioRef} src={track.song} />
     </Card>
   );
 }

@@ -3,6 +3,9 @@ import gcBandImg from "/images/btd-logo-red.jpg";
 import linusBandImg from "/images/btd-logo-white.jpg";
 import ericBandImg from "/images/btd-logo-yellow.jpg";
 
+import tSOAudio from "/audio/the-strong-ones.mp3";
+import tSOImg from "/images/the-strong-ones.png";
+
 export const bandMembers = [
   {
     id: 1,
@@ -35,5 +38,15 @@ export const bandMembers = [
     instrument: "bass",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto nam excepturi voluptatum placeat veritatis sunt in earum sapiente praesentium obcaecati!",
+  },
+];
+
+export const audioTracks = [
+  {
+    id: 1,
+    imgUrl: tSOImg,
+    title: "The Strong Ones",
+    band: "Born To Die",
+    song: tSOAudio,
   },
 ];

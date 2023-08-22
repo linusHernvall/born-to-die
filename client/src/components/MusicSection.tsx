@@ -1,4 +1,5 @@
 import { Box, SxProps } from "@mui/material";
+import { audioTracks } from "../bandData";
 import MusicCard from "./MusicCard";
 
 function MusicSection() {
@@ -10,9 +11,13 @@ function MusicSection() {
   };
 
   return (
-    <Box sx={musicZoneSx}>
-      <MusicCard />
-    </Box>
+    <>
+      {audioTracks.map((track) => (
+        <Box key={track.id} sx={musicZoneSx}>
+          <MusicCard track={track} />
+        </Box>
+      ))}
+    </>
   );
 }
 
