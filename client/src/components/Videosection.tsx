@@ -41,7 +41,7 @@ function VideoSection() {
             objectFit: "cover",
           }}
         >
-          <source src="../../videos/videoBg.mp4" type="video/mp4" />
+          <source src="../../videos/the-strong-ones.mp4" type="video/mp4" />
         </video>
       ) : (
         <img

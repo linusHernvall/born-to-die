@@ -1,6 +1,7 @@
 import { Box, SxProps } from "@mui/material";
 import { audioTracks } from "../bandData";
 import MusicCard from "./MusicCard";
+import Playthrough from "./Playthrough";
 
 function MusicSection() {
   // CSS--------------------------------------------
@@ -12,6 +13,7 @@ function MusicSection() {
 
   return (
     <>
+      <Playthrough />
       {audioTracks.map((track) => (
         <Box key={track.id} sx={musicZoneSx}>
           <MusicCard track={track} />
