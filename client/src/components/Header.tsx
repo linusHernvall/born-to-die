@@ -44,7 +44,7 @@ function Header() {
         />
         <Link to={"/"}>
           <img
-            src="../../images/btd-logo-white-trans.png"
+            src="../../images/btd-logo-red-trans.png"
             alt="Born To Die logotype"
             style={logoSx}
           />
