@@ -11,8 +11,8 @@ function Playthrough() {
       muted
       loop
       style={{
-        width: "100%",
-        height: "100%",
+        width: "60%",
+        // height: "100vh",
         objectFit: "cover",
         margin: "1rem 0 3rem",
       }}
