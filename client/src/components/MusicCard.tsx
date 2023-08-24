@@ -117,7 +117,12 @@ export default function MusicCard({ track }: MusicCardProps) {
 
   return (
     <Card
-      sx={{ display: "flex", maxWidth: "300px", border: "1px solid #FFFFFF" }}
+      sx={{
+        display: "flex",
+        maxWidth: "300px",
+        border: "1px solid #FFFFFF",
+        backgroundColor: "primary.main",
+      }}
     >
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <CardMedia

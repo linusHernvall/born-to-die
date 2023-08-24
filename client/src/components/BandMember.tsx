@@ -1,5 +1,5 @@
 import { Box, useMediaQuery, useTheme } from "@mui/material";
-import { bandMembers } from "../bandData";
+import { bandMembers } from "../data";
 import MemberCard from "./MemberCard";
 
 function BandMember() {
