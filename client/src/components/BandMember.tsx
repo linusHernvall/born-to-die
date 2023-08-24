@@ -1,8 +1,9 @@
 import { Box, useMediaQuery, useTheme } from "@mui/material";
-import { bandMembers } from "../data";
+import { useBandMemberContext } from "../contexts/BandMemberContext";
 import MemberCard from "./MemberCard";
 
 function BandMember() {
+  const { bandMembers } = useBandMemberContext();
   const theme = useTheme();
   const isWideScreen = useMediaQuery(theme.breakpoints.up("md"));
 

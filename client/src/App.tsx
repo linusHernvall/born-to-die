@@ -1,13 +1,16 @@
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
+import { BandMemberProvider } from "./contexts/BandMemberContext";
 
 function App() {
   return (
     <div>
-      <Header />
-      <main>
-        <Outlet />
-      </main>
+      <BandMemberProvider>
+        <Header />
+        <main>
+          <Outlet />
+        </main>
+      </BandMemberProvider>
     </div>
   );
 }
