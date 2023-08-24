@@ -14,6 +14,7 @@ export const bandMembers = [
     imgUrl: robinBandImg,
     fullName: "Robin Lagerborg",
     instrument: "guitar",
+    path: "/robin",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto nam excepturi voluptatum placeat veritatis sunt in earum sapiente praesentium obcaecati!",
   },
@@ -22,6 +23,7 @@ export const bandMembers = [
     imgUrl: gcBandImg,
     fullName: "GC",
     instrument: "vocals",
+    path: "/gc",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto nam excepturi voluptatum placeat veritatis sunt in earum sapiente praesentium obcaecati!",
   },
@@ -30,6 +32,7 @@ export const bandMembers = [
     imgUrl: ericBandImg,
     fullName: "Eric Skjuttorp",
     instrument: "drums",
+    path: "/eric",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto nam excepturi voluptatum placeat veritatis sunt in earum sapiente praesentium obcaecati!",
   },
@@ -38,6 +41,7 @@ export const bandMembers = [
     imgUrl: linusBandImg,
     fullName: "Linus Hernvall",
     instrument: "bass",
+    path: "/linus",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto nam excepturi voluptatum placeat veritatis sunt in earum sapiente praesentium obcaecati!",
   },

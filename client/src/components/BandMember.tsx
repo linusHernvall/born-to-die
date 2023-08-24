@@ -1,4 +1,5 @@
 import { Box, useMediaQuery, useTheme } from "@mui/material";
+import { Link } from "react-router-dom";
 import { useBandMemberContext } from "../contexts/BandMemberContext";
 import MemberCard from "./MemberCard";
 
@@ -27,12 +28,14 @@ function BandMember() {
             >
               {rowMembers.map((member) => (
                 <li key={member.id}>
-                  <MemberCard
-                    image={member.imgUrl}
-                    name={member.fullName}
-                    description={member.description}
-                    instrument={member.instrument}
-                  />
+                  <Link to={member.path} style={{ textDecoration: "none" }}>
+                    <MemberCard
+                      image={member.imgUrl}
+                      name={member.fullName}
+                      description={member.description}
+                      instrument={member.instrument}
+                    />
+                  </Link>
                 </li>
               ))}
             </Box>
@@ -51,12 +54,14 @@ function BandMember() {
               key={member.id}
               style={{ display: "flex", justifyContent: "center" }}
             >
-              <MemberCard
-                image={member.imgUrl}
-                name={member.fullName}
-                description={member.description}
-                instrument={member.instrument}
-              />
+              <Link to={member.path} style={{ textDecoration: "none" }}>
+                <MemberCard
+                  image={member.imgUrl}
+                  name={member.fullName}
+                  description={member.description}
+                  instrument={member.instrument}
+                />
+              </Link>
             </li>
           ))}
         </ul>
