@@ -12,7 +12,7 @@ function GigSchedule() {
 
   return (
     <div>
-      <Box>
+      <Box sx={{ marginBottom: "3rem" }}>
         <Typography variant="h5" sx={topicSx}>
           Upcoming Shows
         </Typography>

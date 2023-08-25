@@ -9,14 +9,12 @@ function Band() {
     display: "flex",
     justifyContent: "center",
   };
+
   const bioBandWrapperSx: SxProps = {
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
     alignItems: "center",
-  };
-  const memberWrapperSx: SxProps = {
-    marginTop: "3rem",
   };
 
   return (
@@ -24,9 +22,7 @@ function Band() {
       <Box sx={bioBandWrapperSx}>
         <BandPicture />
         <Biography />
-        <Box sx={memberWrapperSx}>
-          <BandMember />
-        </Box>
+        <BandMember />
       </Box>
     </Box>
   );

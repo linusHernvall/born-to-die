@@ -5,7 +5,7 @@ function BandPicture() {
   const backgroundImgWrapperSx: SxProps = {
     width: "100%",
     height: "600px",
-    marginTop: "3rem",
+    // marginTop: "3rem",
   };
 
   const backgroundImgSx: SxProps = {

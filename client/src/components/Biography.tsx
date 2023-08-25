@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 
 function Biography() {
   return (
-    <Box>
+    <Box sx={{ marginBottom: "3rem" }}>
       <Typography
         sx={{ margin: "3rem 0", display: "flex", justifyContent: "center" }}
         variant="h5"
