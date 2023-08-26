@@ -28,7 +28,10 @@ function BandMember() {
             >
               {rowMembers.map((member) => (
                 <li key={member.id}>
-                  <Link to={member.path} style={{ textDecoration: "none" }}>
+                  <Link
+                    to={`/band-member/${member.id}`}
+                    style={{ textDecoration: "none" }}
+                  >
                     <MemberCard
                       image={member.imgUrl}
                       name={member.fullName}
@@ -54,7 +57,10 @@ function BandMember() {
               key={member.id}
               style={{ display: "flex", justifyContent: "center" }}
             >
-              <Link to={member.path} style={{ textDecoration: "none" }}>
+              <Link
+                to={`/band-member/${member.id}`}
+                style={{ textDecoration: "none" }}
+              >
                 <MemberCard
                   image={member.imgUrl}
                   name={member.fullName}

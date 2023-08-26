@@ -10,12 +10,9 @@ import {
 import App from "./App";
 import "./index.css";
 import Band from "./pages/Band";
+import BandMemberDetail from "./pages/BandMemberDetail";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
-import MemberEric from "./pages/MemberEric";
-import MemberGc from "./pages/MemberGc";
-import MemberLinus from "./pages/MemberLinus";
-import MemberRobin from "./pages/MemberRobin";
 import Music from "./pages/Music";
 import Shows from "./pages/Shows";
 
@@ -103,10 +100,7 @@ const router = createBrowserRouter(
       <Route path="contact" element={<Contact />} />
       <Route path="band" element={<Band />} />
       <Route path="shows" element={<Shows />} />
-      <Route path="robin" element={<MemberRobin />} />
-      <Route path="gc" element={<MemberGc />} />
-      <Route path="eric" element={<MemberEric />} />
-      <Route path="linus" element={<MemberLinus />} />
+      <Route path="band-member/:id" element={<BandMemberDetail />} />
       <Route
         path="*"
         element={
