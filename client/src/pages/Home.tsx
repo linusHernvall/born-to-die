@@ -10,12 +10,12 @@ function Home() {
     <Box>
       <VideoSection />
 
-      <Container sx={{ maxWidth: "1012px" }}>
+      <Container>
         <GigSchedule />
         <Band />
       </Container>
       <Playthrough />
-      <Container sx={{ maxWidth: "1012px" }}>
+      <Container>
         <MusicSection />
       </Container>
     </Box>

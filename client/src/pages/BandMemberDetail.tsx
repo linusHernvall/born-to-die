@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Container, SxProps, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { bandMembers } from "../data";
 
@@ -15,10 +15,46 @@ function BandMemberDetail() {
     return <Typography variant="h3">Member not found</Typography>;
   }
 
+  // CSS-------------------------------------------------------------
+  const contentWrapperSx: SxProps = {
+    border: "2px solid red",
+    display: "flex",
+    flex: "wrap",
+    maxWidth: "1000px",
+  };
+
+  const backgroundImgWrapperSx: SxProps = {
+    width: "100%",
+    border: "2px solid green",
+  };
+  const backgroundImgSx: SxProps = {
+    backgroundImage: `url(${member.bigImg})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    width: "500px",
+    height: "600px",
+    minHeight: "400px", // this could be useful
+  };
+
   return (
     <Box className="marginTop">
-      <Typography variant="h2">{member.fullName}</Typography>
-      <Typography variant="body2">{member.description}</Typography>
+      <Container
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          border: "2px solid gold",
+        }}
+      >
+        <Typography variant="h3">{member.fullName}</Typography>
+        <Box sx={contentWrapperSx}>
+          <Typography variant="body2">{member.description}</Typography>
+          <Box sx={backgroundImgWrapperSx}>
+            <Box sx={backgroundImgSx} />
+          </Box>
+        </Box>
+      </Container>
     </Box>
   );
 }
