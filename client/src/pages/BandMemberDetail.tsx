@@ -20,42 +20,48 @@ function BandMemberDetail() {
     border: "2px solid red",
     display: "flex",
     flex: "wrap",
-    maxWidth: "1000px",
+    maxWidth: "500px",
   };
 
   const backgroundImgWrapperSx: SxProps = {
     width: "100%",
     border: "2px solid green",
+    zIndex: "-10",
   };
   const backgroundImgSx: SxProps = {
     backgroundImage: `url(${member.bigImg})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    width: "500px",
-    height: "600px",
-    minHeight: "400px", // this could be useful
+    width: "400px",
+    height: "400px",
+    position: "fixed",
+    left: 0,
+    bottom: 0,
+    zIndex: "-1",
   };
 
   return (
-    <Box className="marginTop">
-      <Container
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          border: "2px solid gold",
-        }}
-      >
-        <Typography variant="h3">{member.fullName}</Typography>
-        <Box sx={contentWrapperSx}>
-          <Typography variant="body2">{member.description}</Typography>
-          <Box sx={backgroundImgWrapperSx}>
-            <Box sx={backgroundImgSx} />
+    <>
+      {/* The background image */}
+      <Box sx={backgroundImgSx} />
+      {/* Your existing components */}
+      <Box className="marginTop">
+        <Container
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+            border: "2px solid gold",
+          }}
+        >
+          <Typography variant="h3">{member.fullName}</Typography>
+          <Box sx={contentWrapperSx}>
+            <Typography variant="body2">{member.description}</Typography>
           </Box>
-        </Box>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+    </>
   );
 }
 

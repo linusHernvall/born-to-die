@@ -3,7 +3,7 @@ import gcBandImg from "/images/btd-logo-red.jpg";
 import linusBandImg from "/images/btd-logo-white.jpg";
 import ericBandImg from "/images/btd-logo-yellow.jpg";
 
-import gcBgImg from "/images/gc-no-bg.png";
+import gcBgImg from "/images/gc-blood.png";
 
 import spinelessAudio from "/audio/spineless.mp3";
 import tSOAudio from "/audio/the-strong-ones.mp3";
