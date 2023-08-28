@@ -28,7 +28,7 @@ export default function MemberCard(props: {
     objectFit: "contain",
   };
 
-  const { image, name, description, instrument } = props;
+  const { image, name, instrument } = props;
   return (
     <Card sx={cardSx}>
       <CardActionArea>
