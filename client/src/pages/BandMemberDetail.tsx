@@ -57,7 +57,12 @@ function BandMemberDetail() {
         >
           <Typography variant="h3">{member.fullName}</Typography>
           <Box sx={contentWrapperSx}>
-            <Typography variant="body2">{member.description}</Typography>
+            <Typography
+              dangerouslySetInnerHTML={{
+                __html: member.description.replace(/\n/g, "<br/>"),
+              }}
+              variant="body2"
+            ></Typography>
           </Box>
         </Container>
       </Box>
