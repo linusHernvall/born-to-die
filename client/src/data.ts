@@ -1,9 +1,7 @@
-import robinBandImg from "/images/btd-logo-cream.jpg";
-import gcBandImg from "/images/btd-logo-red.jpg";
-import linusBandImg from "/images/btd-logo-white.jpg";
-import ericBandImg from "/images/btd-logo-yellow.jpg";
-
-import gcBgImg from "/images/gc-blood.png";
+import ericBandImg from "/images/eric-card.jpg";
+import gcBandImg from "/images/gc-card.jpg";
+import linusBandImg from "/images/linus-card.jpg";
+import robinBandImg from "/images/robba-card.jpg";
 
 import spinelessAudio from "/audio/spineless.mp3";
 import tSOAudio from "/audio/the-strong-ones.mp3";
@@ -14,7 +12,7 @@ export const bandMembers = [
   {
     id: 1,
     imgUrl: robinBandImg,
-    // bigImg: ,
+    bigImg: "/images/robba-big.jpg",
     fullName: "Robin Lagerborg",
     instrument: "guitar",
     description: `Robin, the dynamic and electrifying guitarist of the iconic band Born To Die, stands as a driving force behind the band's meteoric rise in the metal music scene. With an early introduction to the world of music, Robin's journey into the realm of metal commenced when they first picked up a guitar, instantly forging an unbreakable bond.
@@ -26,7 +24,7 @@ export const bandMembers = [
   {
     id: 2,
     imgUrl: gcBandImg,
-    bigImg: gcBgImg,
+    bigImg: "/images/gc-big.jpg",
     fullName: "GC",
     instrument: "vocals",
     description: `GC, the enigmatic and commanding vocalist of the powerhouse band Born To Die, reigns as a central force propelling the band's meteoric ascent within the metal music sphere. With a magnetic connection to the world of music from an early age, GC's odyssey into the realm of metal commenced with the discovery of their formidable vocal prowess, instantly sparking a fire that would shape their destiny.
@@ -39,7 +37,7 @@ export const bandMembers = [
   {
     id: 3,
     imgUrl: ericBandImg,
-    // bigImg: ,
+    bigImg: "/images/eric-big.jpg",
     fullName: "Eric Skjuttorp",
     instrument: "drums",
     description: `Eric Skjuttorp, the rhythmic heartbeat behind the powerhouse band Born To Die, commands the drums with an intensity that fuels the band's meteoric rise in the metal music realm. From an early age, Eric's affinity for rhythm manifested, setting the stage for a percussive journey that would eventually cement their place in the world of metal.
@@ -52,7 +50,7 @@ export const bandMembers = [
   {
     id: 4,
     imgUrl: linusBandImg,
-    // bigImg: ,
+    bigImg: "/images/linus-big.jpg",
     fullName: "Linus Hernvall",
     instrument: "bass",
     description: `Linus Hernvall, the pulsating heartbeat of the powerhouse band Born To Die, wields the bass guitar with a mastery that underpins the band's meteoric rise in the metal music domain. From an early encounter with music, Linus's affinity for rhythm and harmony emerged, shaping a sonic path that would eventually lead them to the forefront of the metal scene.
