@@ -9,11 +9,25 @@ function BandPicture() {
   };
 
   const backgroundImgSx: SxProps = {
-    backgroundImage: "url(../../images/btd-band-img.jpg)",
+    position: "relative",
     width: "100%",
     height: "100%",
+    backgroundImage: `url(../../images/btd-band-img.jpg)`,
     backgroundSize: "cover",
     backgroundPosition: "center",
+    "&::after": {
+      content: '""',
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: `
+      linear-gradient(to top, black, transparent 5%, transparent 50%),
+      linear-gradient(to bottom, black, transparent 5%, transparent 50%),
+      radial-gradient(circle at center, transparent 35%, black 95%)`,
+      pointerEvents: "none", // So the overlay doesn't interfere with any interactions
+    },
   };
 
   return (
