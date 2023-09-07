@@ -1,17 +1,7 @@
-import ericBandImg from "/images/eric-card.jpg";
-import gcBandImg from "/images/gc-card.jpg";
-import linusBandImg from "/images/linus-card.jpg";
-import robinBandImg from "/images/robba-card.jpg";
-
-import spinelessAudio from "/audio/spineless.mp3";
-import tSOAudio from "/audio/the-strong-ones.mp3";
-import spinelessImg from "/images/ep2022.jpg";
-import tSOImg from "/images/the-strong-ones.png";
-
 export const bandMembers = [
   {
     id: 1,
-    imgUrl: robinBandImg,
+    imgUrl: "/images/robba-card.jpg",
     bigImg: "/images/robba-big.jpg",
     fullName: "Robin Lagerborg",
     instrument: "guitar",
@@ -23,7 +13,7 @@ export const bandMembers = [
   },
   {
     id: 2,
-    imgUrl: gcBandImg,
+    imgUrl: "/images/gc-card.jpg",
     bigImg: "/images/gc-big.jpg",
     fullName: "GC",
     instrument: "vocals",
@@ -36,7 +26,7 @@ export const bandMembers = [
 
   {
     id: 3,
-    imgUrl: ericBandImg,
+    imgUrl: "/images/eric-card.jpg",
     bigImg: "/images/eric-big.jpg",
     fullName: "Eric Skjuttorp",
     instrument: "drums",
@@ -49,7 +39,7 @@ export const bandMembers = [
 
   {
     id: 4,
-    imgUrl: linusBandImg,
+    imgUrl: "/images/linus-card.jpg",
     bigImg: "/images/linus-big.jpg",
     fullName: "Linus Hernvall",
     instrument: "bass",
@@ -64,16 +54,23 @@ export const bandMembers = [
 export const audioTracks = [
   {
     id: 1,
-    imgUrl: tSOImg,
+    imgUrl: "/images/the-strong-ones.jpg",
     title: "The Strong Ones",
     band: "Born To Die",
-    song: tSOAudio,
+    song: "/audio/the-strong-ones.mp3",
   },
   {
     id: 2,
-    imgUrl: spinelessImg,
+    imgUrl: "/images/ep2022.jpg",
     title: "Spineless",
     band: "Born To Die",
-    song: spinelessAudio,
+    song: "/audio/spineless.mp3",
+  },
+  {
+    id: 3,
+    imgUrl: "/images/stuck-in-fear.png",
+    title: "Stuck In Fear",
+    band: "Born To Die",
+    song: "/audio/stuck-in-fear.mp3",
   },
 ];
