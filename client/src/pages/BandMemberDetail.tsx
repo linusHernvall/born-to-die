@@ -5,6 +5,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { bandMembers } from "../data";
 
@@ -14,6 +15,12 @@ function BandMemberDetail() {
 
   const { id } = useParams<{ id: string | undefined }>();
   const member = id && bandMembers.find((m) => m.id === parseInt(id, 10));
+
+  useEffect(() => {
+    if (member) {
+      document.title = `${member.fullName} - Born To Die`;
+    }
+  }, [member]);
 
   if (!id) {
     return <Typography variant="h3">Invalid ID</Typography>;

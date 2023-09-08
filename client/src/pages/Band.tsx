@@ -5,10 +5,6 @@ import Biography from "../components/Biography";
 
 function Band() {
   // CSS--------------------------------------------
-  const bandZoneSx: SxProps = {
-    display: "flex",
-    justifyContent: "center",
-  };
 
   const bioBandWrapperSx: SxProps = {
     display: "flex",
@@ -18,12 +14,10 @@ function Band() {
   };
 
   return (
-    <Box sx={bandZoneSx}>
-      <Box sx={bioBandWrapperSx}>
-        <BandPicture />
-        <Biography />
-        <BandMember />
-      </Box>
+    <Box sx={bioBandWrapperSx}>
+      <BandPicture />
+      <Biography />
+      <BandMember />
     </Box>
   );
 }
