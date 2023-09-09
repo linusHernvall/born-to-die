@@ -4,7 +4,10 @@ import jwt from "jsonwebtoken";
 
 import { SECRET_KEY } from "../../config";
 import UserModel, { UserInterface } from "../../models/UserModel";
-import { validateRegisterInput } from "../../util/validators";
+import {
+  validateLoginInput,
+  validateRegisterInput,
+} from "../../util/validators";
 
 interface RegisterInput {
   username: string;
@@ -74,6 +77,35 @@ export const userResolvers = {
       return {
         ...res.toObject(),
         id: res._id,
+        token,
+      };
+    },
+    async login(
+      _: any,
+      { username, password }: { username: string; password: string }
+    ) {
+      const { errors, valid } = validateLoginInput(username, password);
+      const user = await UserModel.findOne({ username });
+
+      if (!valid) {
+        throw new UserInputError("Errors", { errors });
+      }
+
+      if (!user) {
+        errors.general = "User not found";
+        throw new UserInputError("User not found", { errors });
+      }
+
+      const match = await bcrypt.compare(password, user.password);
+      if (!match) {
+        errors.general = "Wrong credentials";
+        throw new UserInputError("Wrong credentials", { errors });
+      }
+
+      const token = generateToken(user);
+      return {
+        ...user.toObject(),
+        id: user._id,
         token,
       };
     },
