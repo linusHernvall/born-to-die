@@ -1,3 +1,4 @@
+import { ApolloProvider } from "@apollo/client";
 import { createTheme, ThemeProvider } from "@mui/material";
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -8,12 +9,14 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import App from "./App";
+import client from "./appolloClient";
 import "./index.css";
 import Band from "./pages/Band";
 import BandMemberDetail from "./pages/BandMemberDetail";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Music from "./pages/Music";
+import Register from "./pages/Register";
 import Shows from "./pages/Shows";
 
 declare module "@mui/material/styles" {
@@ -100,6 +103,7 @@ const router = createBrowserRouter(
       <Route path="contact" element={<Contact />} />
       <Route path="band" element={<Band />} />
       <Route path="shows" element={<Shows />} />
+      <Route path="register" element={<Register />} />
       <Route path="band-member/:id" element={<BandMemberDetail />} />
       <Route
         path="*"
@@ -123,8 +127,10 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <ApolloProvider client={client}>
+      <ThemeProvider theme={theme}>
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </ApolloProvider>
   </React.StrictMode>
 );

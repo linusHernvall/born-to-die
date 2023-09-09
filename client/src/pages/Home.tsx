@@ -4,6 +4,7 @@ import GigSchedule from "../components/GigSchedule";
 import MusicSection from "../components/MusicSection";
 import VideoSection from "../components/Videosection";
 import Band from "./Band";
+import Register from "./Register";
 
 function Home() {
   useEffect(() => {
@@ -17,6 +18,7 @@ function Home() {
         <Band />
         {/* <Playthrough /> */}
         <MusicSection />
+        <Register />
       </Container>
     </Box>
   );
