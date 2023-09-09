@@ -9,8 +9,19 @@ const typeDefs = gql`
     token: String!
   }
 
+  input RegisterInput {
+    username: String!
+    password: String!
+    confirmPassword: String!
+    email: String!
+  }
+
   type Query {
     getUsers: [User]
+  }
+
+  type Mutation {
+    register(registerInput: RegisterInput): User!
   }
 `;
 

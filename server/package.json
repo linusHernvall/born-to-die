@@ -22,6 +22,8 @@
     "semantic-ui-react": "^2.1.4"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.3",
+    "@types/jsonwebtoken": "^9.0.2",
     "nodemon": "^2.0.22"
   }
 }
