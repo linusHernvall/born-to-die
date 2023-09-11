@@ -28,6 +28,9 @@ export const theme = createTheme({
     secondary: {
       main: "#C40000",
     },
+    tertiary: {
+      main: "#00F",
+    },
   },
   typography: {
     h1: {

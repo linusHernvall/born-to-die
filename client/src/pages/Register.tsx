@@ -1,4 +1,4 @@
-import { Box, TextField } from "@mui/material";
+import { Box, TextField, Typography } from "@mui/material";
 import gql from "graphql-tag";
 
 const REGISTER_USER = gql`
@@ -28,6 +28,7 @@ const REGISTER_USER = gql`
 function Register() {
   return (
     <Box sx={{ marginTop: "1rem" }}>
+      <Typography variant="h5">HEllo World</Typography>
       <TextField
         required
         id="outlined-required"
