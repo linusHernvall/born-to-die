@@ -27,7 +27,7 @@ const REGISTER_USER = gql`
 
 function Register() {
   return (
-    <Box>
+    <Box sx={{ marginTop: "1rem" }}>
       <TextField
         required
         id="outlined-required"
