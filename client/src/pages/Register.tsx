@@ -1,4 +1,4 @@
-import { Box, TextField, Typography } from "@mui/material";
+import { Box, TextField, Typography, useTheme } from "@mui/material";
 import gql from "graphql-tag";
 
 const REGISTER_USER = gql`
@@ -26,35 +26,37 @@ const REGISTER_USER = gql`
 `;
 
 function Register() {
+  const theme = useTheme();
+
   return (
     <Box sx={{ marginTop: "1rem" }}>
-      <Typography variant="h5">HEllo World</Typography>
+      <Typography variant="h5">Register</Typography>
       <TextField
         required
         id="outlined-required"
-        label="Required"
-        defaultValue="Hello World"
+        label="Username"
         variant="outlined"
         sx={{
           "& .MuiInputBase-input": {
-            color: "white",
+            ...theme.typography.body2,
+            color: "#FFFFFF",
           },
           "& .MuiFormLabel-root.Mui-focused": {
-            color: "white", // Change label color when focused
+            color: "#FFFFFF", // Change label color when focused
           },
           "& .MuiOutlinedInput-root": {
             "& fieldset": {
-              borderColor: "white", // Change default border color
+              borderColor: "#FFFFFF", // Change default border color
             },
 
             "&:hover fieldset": {
-              borderColor: "orange", // Change border color on hover
+              borderColor: theme.palette.tertiary.main, // Change border color on hover
             },
             "&.Mui-focused fieldset": {
-              borderColor: "yellow", // Change border color when focused
+              borderColor: theme.palette.tertiary.main, // Change border color when focused
             },
             "&.Mui-error fieldset": {
-              borderColor: "red", // Change border color when there's an error
+              borderColor: theme.palette.secondary.main, // Change border color when there's an error
             },
           },
         }}
