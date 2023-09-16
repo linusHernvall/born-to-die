@@ -1,12 +1,12 @@
-import { Box, useMediaQuery, useTheme } from "@mui/material";
-import { Link } from "react-router-dom";
-import { useBandMemberContext } from "../contexts/BandMemberContext";
-import MemberCard from "./MemberCard";
+import { Box, useMediaQuery, useTheme } from '@mui/material';
+import { Link } from 'react-router-dom';
+
+import { bandMembers } from '../data';
+import MemberCard from './MemberCard';
 
 function BandMember() {
-  const { bandMembers } = useBandMemberContext();
   const theme = useTheme();
-  const isWideScreen = useMediaQuery(theme.breakpoints.up("md"));
+  const isWideScreen = useMediaQuery(theme.breakpoints.up('md'));
 
   const chunkedBandMembers = [];
   for (let i = 0; i < bandMembers.length; i += 2) {
@@ -21,16 +21,16 @@ function BandMember() {
             <Box
               key={rowIndex}
               sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                gap: "2rem",
+                display: 'flex',
+                justifyContent: 'space-between',
+                gap: '2rem',
               }}
             >
               {rowMembers.map((member) => (
                 <li key={member.id}>
                   <Link
                     to={`/band-member/${member.id}`}
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: 'none' }}
                   >
                     <MemberCard
                       image={member.imgUrl}
@@ -47,19 +47,19 @@ function BandMember() {
       ) : (
         <ul
           style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
           }}
         >
           {bandMembers.map((member) => (
             <li
               key={member.id}
-              style={{ display: "flex", justifyContent: "center" }}
+              style={{ display: 'flex', justifyContent: 'center' }}
             >
               <Link
                 to={`/band-member/${member.id}`}
-                style={{ textDecoration: "none" }}
+                style={{ textDecoration: 'none' }}
               >
                 <MemberCard
                   image={member.imgUrl}
