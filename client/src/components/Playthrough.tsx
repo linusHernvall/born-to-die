@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef } from 'react';
 
 function Playthrough() {
   //CSS----------------------------------------
@@ -6,10 +6,10 @@ function Playthrough() {
 
   return (
     <div className="video-wrapper">
+      <div className="overlay"></div>
       <video ref={videoRef} autoPlay muted loop className="video-wrapper">
         <source src="/videos/hell-inside-pt.mp4" type="video/mp4" />
       </video>
-      <div className="overlay"></div>
     </div>
   );
 }
