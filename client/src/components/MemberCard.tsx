@@ -44,7 +44,6 @@ export default function MemberCard(props: {
             {name}
           </Typography>
           <Typography variant="body1">{instrument}</Typography>
-          {/* <Typography variant="body2">{description}</Typography> */}
         </CardContent>
       </CardActionArea>
     </Card>
